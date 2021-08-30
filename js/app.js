@@ -163,7 +163,7 @@ formBtn.addEventListener('click', (e) => {
 generationUl.addEventListener('click', event => {
     if (event.target.tagName == 'LI') {
         let generationId = event.target.id;
-
+        console.log(generationId)
         // clear prev data
         moviesContainer.textContent = '';
         // get movies by generation
