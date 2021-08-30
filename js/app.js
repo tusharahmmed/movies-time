@@ -25,7 +25,7 @@ const getUrl = (gen = '', query = '') => {
     // set api url
     if (gen) {
         // if have generation id
-        return url = `https://api.themoviedb.org/3/discover/movie/?with_genres=${gen}&${apiKey}`;
+        let url = `https://api.themoviedb.org/3/discover/movie/?with_genres=${gen}&${apiKey}`;
         // return url
         return url;
 
@@ -162,7 +162,6 @@ formBtn.addEventListener('click', (e) => {
 
 generationUl.addEventListener('click', event => {
     if (event.target.tagName == 'LI') {
-        console.log(event.target.id);
         let generationId = event.target.id;
 
         // clear prev data
