@@ -25,19 +25,19 @@ const getUrl = (gen = '', query = '') => {
     // set api url
     if (gen) {
         // if have generation id
-        let url = `https://api.themoviedb.org/3/discover/movie/?with_genres=${gen}&${apiKey}`;
+        let url = `HTTPS://api.themoviedb.org/3/discover/movie/?with_genres=${gen}&${apiKey}`;
         // return url
         return url;
 
     } else if (query) {
         // if have search value
-        let url = `https://api.themoviedb.org/3/search/movie?language=en-US&include_adult=false&query=${query}&${apiKey}`;
+        let url = `HTTPS://api.themoviedb.org/3/search/movie?language=en-US&include_adult=false&query=${query}&${apiKey}`;
         // return url
         return url;
 
     } else {
         // default base url
-        let url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&language=en-US&${apiKey}`;
+        let url = `HTTPS://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&language=en-US&${apiKey}`;
         // return url
         return url;
     }
@@ -61,7 +61,7 @@ const extractMovies = data => {
     for (let result of data.results) {
         // get values
         let { original_title, poster_path, release_date, id } = result;
-        let img = `https://image.tmdb.org/t/p/original${poster_path}`;
+        let img = `HTTPS://image.tmdb.org/t/p/original${poster_path}`;
         //console.log(result);
         showMovies(original_title, img, release_date, id);
     }
@@ -128,7 +128,7 @@ const videoBox = (data) => {
 }
 // get video from click movie
 const getVideo = (id) => {
-    let url = `https://api.themoviedb.org/3/movie/${id}/videos?${apiKey}&language=en-US`;
+    let url = `HTTPS://api.themoviedb.org/3/movie/${id}/videos?${apiKey}&language=en-US`;
     // call api
     fetch(url)
         .then(res => res.json())
